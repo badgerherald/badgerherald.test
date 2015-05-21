@@ -1,0 +1,35 @@
+.vagrant
+install-site*
+.DS_Store
+*.sql
+
+# emacs
+*~
+*~
+*#
+.#*
+
+*~
+.DS_Store
+.svn
+.cvs
+*.bak
+*.swp
+*.pyc
+Thumbs.db
+Capfile
+/config
+extras/
+interactive/
+
+# Wordpress
+wp/*
+!wp/wp-config.php
+
+# other
+
+style.css
+.sass-cache
+cache
+*.sublime-workspace
+node_modules

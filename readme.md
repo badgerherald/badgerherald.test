@@ -54,6 +54,13 @@ Now, clone the plugin directory *directly* into the WordPress plugin directory. 
     $ cd ./wp/wp-content/plugins/
     $ git clone https://github.com/badgerherald/hexa-plugins.git .
 
+(__protip:__ Clone these core plugins into your [`wp-content/mu-plugins`](https://codex.wordpress.org/Must_Use_Plugins) folder and keep your plugin folder free of git stuff.)
+
+Next, init the nested submodules of this repo
+
+    $ cd plugins
+    $ git submodule update --init --recursive 
+
 That's it! Happy developing.
 
 * * *

@@ -40,7 +40,7 @@ Typing [http://bhrld.dev](http://bhrld.dev) into a browser should now take you t
 
 A few addtional repos are needed for development.
 
-First, cd to the WordPress theme directory.
+###### First, cd to the WordPress theme directory.
 
     $ cd ./wp/wp-content/themes/
 
@@ -49,9 +49,15 @@ And clone the Herald's main theme [exa](http://github.com/badgerherald/exa), and
     $ git clone https://github.com/badgerherald/exa.git
     $ git clone https://github.com/badgerherald/hexa.git
 
-Now, clone the plugin directory *directly* into the WordPress plugin directory. We do this by specifying `.` as the folder name to clone into.
+###### Now, we need to set up the core plugins.
+
+First we remove the default plugins from the plugin directory:
 
     $ cd ./wp/wp-content/plugins/
+    $ rm -rf <- careful with this line. It'll remove everything in the folder. Be sure you're in the plugin folder, or this won't just delete plugins but possibly the operating system.
+
+Then, we clone the plugin directory *directly* into the WordPress plugin directory. We do this by specifying `.` as the folder name to clone into. Still in the plugins folder.
+    
     $ git clone https://github.com/badgerherald/hexa-plugins.git .
 
 (__protip:__ Clone these core plugins into your [`wp-content/mu-plugins`](https://codex.wordpress.org/Must_Use_Plugins) folder and keep your plugin folder free of git stuff.)

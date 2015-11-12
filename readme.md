@@ -28,13 +28,19 @@ From the root of the repo, run:
 
 This will prevision a new virtual machine on your computer with the same LAMP stack as the Herald. This process can take anywhere between 5 and 10 minutes, depending on your machine. Once the script is finished running, you'll have a vagrant box running at the ip address `192.168.19.69`. 
 
-Add the following to your `/etc/hosts` file:
+Now, we have to map the hostname "bhrld.dev" to the IP address directed to the vagrant machine. To do so, (MAC) open Terminal and type:
 
-    192.168.19.69 bhrld.dev
+`sudo vi /etc/hosts`
 
-On some operating systems, change your `/private/etc/hosts` file on your host computer (not the VM). Also, make sure there aren't any file extension attached to the hosts file, especially if you edit it through program/applications other than vi, vim, nano etc. 
+enter your password as prompted. Insert the following in a new line:
 
-Typing [http://bhrld.dev](http://bhrld.dev) into a browser should now take you to a local instance of the Herald site. Make sure your browser resolves the `http://`.
+`192.168.19.69	bhrld.dev` 
+
+(Note: use the tab key between 69 and bhrld instead of a space.)
+
+For some reason, if `/etc/hosts` is not properly set up as an alias for `/private/etc/hosts`, change your `/private/etc/hosts` file directly instead. The `hosts` file is on your host computer, not the Virtual Machine. Also, make sure there aren't any file extension attached to the hosts file, especially if you edit it through program/applications other than vi, vim, nano etc. 
+
+Typing [http://bhrld.dev](http://bhrld.dev) into a browser should now take you to a local instance of the Herald site. The site will most likely be blank.  Make sure your browser resolves the `http://`.
 
 #### 3. Clone other repos
 
@@ -53,21 +59,44 @@ And clone the Herald's main theme [exa](http://github.com/badgerherald/exa), and
 
 First we remove the default plugins from the plugin directory:
 
-    $ cd ./wp/wp-content/plugins/
-    $ rm -rf <- careful with this line. It'll remove everything in the folder. Be sure you're in the plugin folder, or this won't just delete plugins but possibly the operating system.
+    $ cd ../plugins/
+    $ rm -rf * 
+
+_careful with the `rm` command; it will remove everything in the folder. Be sure you're in the plugin folder, or this won't just delete plugins but possibly the operating system._
 
 Then, we clone the plugin directory *directly* into the WordPress plugin directory. We do this by specifying `.` as the folder name to clone into. Still in the plugins folder.
     
     $ git clone https://github.com/badgerherald/hexa-plugins.git .
 
-(__protip:__ Clone these core plugins into your [`wp-content/mu-plugins`](https://codex.wordpress.org/Must_Use_Plugins) folder and keep your plugin folder free of git stuff.)
+(__protip:__ Clone these core plugins into your [`wp-content/mu-plugins`](https://codex.wordpress.org/Must_Use_Plugins) folder and keep your plugin folder free of git stuff.)(optional)
 
 Next, init the nested submodules of this repo
 
     $ cd plugins
     $ git submodule update --init --recursive 
 
-That's it! Happy developing.
+#### 4. Using Sass: a CSS Preprocessor
+
+The Herald website requires extensive CSS formatting. We use Sass to help make the web design process easier and more efficient. It is required, or the website won't have a working stylesheet. Here's how:
+
+###### Install Sass
+
+Visit [`http://sass-lang.com/install`](http://sass-lang.com/install) and follow the instructions. A command-line install is sufficient for our purposes, but feel free to play around with the related applications.
+
+###### Have Sass watch for changes
+
+Now that you have installed Sass to your host machine, cd to the themes/exa directory:
+
+	$ cd path/to/themes/exa
+
+After movign to exa, use the following command to have Sass watch for changes you make to the stylesheets:
+
+	$ sass --watch sass:.
+
+This way, every time you make a change to the style sheets in exa/sass, Sass will recompile the style.css file in themes/exa automatically. The same command can be used in the hexa directory.
+
+
+** That's it! Happy developing. **
 
 * * *
 

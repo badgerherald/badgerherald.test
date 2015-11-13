@@ -26,17 +26,17 @@ From the root of the repo, run:
 
     vagrant up
 
-This will prevision a new virtual machine on your computer with the same LAMP stack as the Herald. This process can take anywhere between 5 and 10 minutes, depending on your machine. Once the script is finished running, you'll have a vagrant box running at the ip address `192.168.19.69`. 
+This will prevision a new virtual machine on your computer with the same LAMP stack as the Herald. This process can take anywhere between 5 and 15 minutes, depending on your machine. Once the script is finished running, you'll have a vagrant box running at the ip address `192.168.19.69`. 
 
-Now, we have to map the hostname "bhrld.dev" to the IP address directed to the vagrant machine. To do so, (MAC) open Terminal and type:
+Now, we have to map the hostname "bhrld.dev" to the IP address of the vagrant machine. To do so open Terminal and type:
 
-`sudo vi /etc/hosts`
+`sudo nano /etc/hosts`
 
-enter your password as prompted. Insert the following in a new line:
+Enter your password as prompted. Insert the following in a new line:
 
 `192.168.19.69	bhrld.dev` 
 
-(Note: use the tab key between 69 and bhrld instead of a space.)
+Use `control+o` to save the file and `control+c` to quit. 
 
 For some reason, if `/etc/hosts` is not properly set up as an alias for `/private/etc/hosts`, change your `/private/etc/hosts` file directly instead. The `hosts` file is on your host computer, not the Virtual Machine. Also, make sure there aren't any file extension attached to the hosts file, especially if you edit it through program/applications other than vi, vim, nano etc. 
 

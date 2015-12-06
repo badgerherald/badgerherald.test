@@ -36,6 +36,7 @@ define('DB_COLLATE', '');
 /** badgerherald dev use constants*/
 define('HRLD_DEV', true);
 define('HRLD_PRODUCTION', false);
+define('EXA_DEV', true);
 
 /**#@+
  * Authentication Unique Keys and Salts.

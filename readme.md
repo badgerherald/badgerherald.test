@@ -40,8 +40,6 @@ Use `control+o` to save the file and `control+c` to quit.
 
 For some reason, if `/etc/hosts` is not properly set up as an alias for `/private/etc/hosts`, change your `/private/etc/hosts` file directly instead. The `hosts` file is on your host computer, not the Virtual Machine. Also, make sure there aren't any file extension attached to the hosts file, especially if you edit it through program/applications other than vi, vim, nano etc. 
 
-Typing [http://bhrld.dev](http://bhrld.dev) into a browser should now take you to a local instance of the Herald site. The site will most likely be blank.  Make sure your browser resolves the `http://`.
-
 #### 3. Clone other repos
 
 A few addtional repos are needed for development.
@@ -74,6 +72,8 @@ Next, init the nested submodules of this repo
 
     $ cd plugins
     $ git submodule update --init --recursive 
+    
+Typing [http://bhrld.dev](http://bhrld.dev) into a browser should now take you to a local instance of the Herald site. The site will most likely be blank.  Make sure your browser resolves the `http://`.
 
 #### 4. Using Sass: a CSS Preprocessor
 

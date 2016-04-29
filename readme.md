@@ -20,7 +20,7 @@ First, run this command from terminal to clone the repo.
 
 You'll need copies of both [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](http://www.vagrantup.com/downloads).
 
-If you have a copy of hrld_wp_dev.sql, move this into the repo directory and it will be loaded. Otherwise, a new database will be created.
+If you have a copy of `hrld_wp_dev.sql`, move this into the repo directory and it will be loaded. Otherwise, a new database will be created.
 
 From the root of the repo, run:
 

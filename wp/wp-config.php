@@ -33,6 +33,7 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
+
 /** bhrld.dev use constants */
 define('HRLD_DEV', true);
 define('EXA_DEV', true);
@@ -40,6 +41,8 @@ define('HRLD_PRODUCTION', false);
 define('WP_HOME','http://bhrld.dev/');
 define('WP_SITEURL','http://bhrld.dev/wp/');
 
+define('WP_HOME','http://bhrld.dev/');
+define('WP_SITEURL','http://bhrld.dev/wp/');
 
 /**#@+
  * Authentication Unique Keys and Salts.

@@ -1,6 +1,6 @@
 <VirtualHost *:80>
-  ServerName bhrld.dev
-  ServerAlias *.bhrld.dev
+  ServerName badgerherald.localhost
+  ServerAlias *.badgerherald.localhost
 
   DocumentRoot /var/www
   <Directory />

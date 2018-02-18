@@ -134,10 +134,10 @@ mysql -u $VAGRANT_DB_USER -p$VAGRANT_DB_PASS -e "grant all privileges on *.* to 
  mysql -u $VAGRANT_DB_USER -p$VAGRANT_DB_PASS -e "CREATE DATABASE IF NOT EXISTS hrld; "
 
 # Import hrld_wp_dev.sql to database hrld
- if [ -f "/var/www/hrld_wp_dev.sql" ];
+ if [ -f "/var/www/badgerherald.localhost.sql" ];
     then
         echo "importing data to hrld" 
-        mysql -u $VAGRANT_DB_USER -p$VAGRANT_DB_PASS $VAGRANT_DB_NAME < "/var/www/hrld_wp_dev.sql"
+        mysql -u $VAGRANT_DB_USER -p$VAGRANT_DB_PASS $VAGRANT_DB_NAME < "/var/www/badgerherald.localhost.sql"
     else
         echo -e "${red}"
         echo ''
@@ -170,7 +170,7 @@ echo '╔ All setup! ═══════════════════�
 echo '║                                                  ║'
 echo '║ Add the following line to your /etc/hosts file:  ║'
 echo '║                                                  ║'
-echo '║     192.168.19.69 bhrld.dev                      ║'
+echo '║     192.168.19.69 badgerherald.localhost         ║'
 echo '║                                                  ║'
 echo '║ - Gentle Bot                                     ║'                                 
 echo '║                                                  ║'

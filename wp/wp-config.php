@@ -34,15 +34,13 @@ define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
 
-/** bhrld.dev use constants */
+/** badgerherald.localhost use constants */
 define('HRLD_DEV', true);
 define('EXA_DEV', true);
 define('HRLD_PRODUCTION', false);
-define('WP_HOME','http://bhrld.dev/');
-define('WP_SITEURL','http://bhrld.dev/wp/');
+define('WP_HOME','http://badgerherald.localhost/');
+define('WP_SITEURL','http://badgerherald.localhost/wp/');
 
-define('WP_HOME','http://bhrld.dev/');
-define('WP_SITEURL','http://bhrld.dev/wp/');
 
 /**#@+
  * Authentication Unique Keys and Salts.

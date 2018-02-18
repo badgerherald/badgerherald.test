@@ -1,10 +1,10 @@
-# bhrld.dev
+# badgerherald.localhost
 
-This repo contains tools The Badger Herald's web team uses for development.
+Run a local instnace of The Badger Herald's website.
 
 ## What this gets you
 
-This repo gives you a configured vagrant box preloaded with configured server settings and a production database.
+This repo gets you a vagrant box preloaded with configured server settings and a production database without the gruntwork 
 
 * * *
 
@@ -14,13 +14,13 @@ This repo gives you a configured vagrant box preloaded with configured server se
 
 First, run this command from terminal to clone the repo.
 
-    git clone https://github.com/badgerherald/bhrld.dev.git
+    git clone https://github.com/badgerherald/badgerherald.localhost.git
 
 #### 2. Vagrant up
 
 You'll need copies of both [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html).
 
-If you have a copy of `hrld_wp_dev.sql`, move this into the repo directory and it will be loaded. Otherwise, a new database will be created.
+If you have a copy of `badgerherald.localhost.sql`, move this into the repo directory and it will be loaded. Otherwise, a new database will be created.
 
 From the root of the repo, run:
 
@@ -28,13 +28,13 @@ From the root of the repo, run:
 
 This will prevision a new virtual machine on your computer with the same LAMP stack as the Herald. This process can take anywhere between 5 and 15 minutes, depending on your machine. Once the script is finished running, you'll have a vagrant box running at the ip address `192.168.19.69`. 
 
-Now, we have to map the hostname "bhrld.dev" to the IP address of the vagrant machine. To do so open Terminal and type:
+Now, we have to map the hostname "badgerherald.localhost" to the IP address of the vagrant machine. To do so open Terminal and type:
 
 `sudo nano /etc/hosts`
 
 Enter your password as prompted. Insert the following in a new line:
 
-`192.168.19.69	bhrld.dev` 
+`192.168.19.69	badgerherald.localhost` 
 
 Use `control+o` to save the file and `control+c` to quit. 
 
@@ -73,7 +73,7 @@ Next, init the nested submodules of this repo
     $ cd plugins
     $ git submodule update --init --recursive 
     
-Typing [http://bhrld.dev](http://bhrld.dev) into a browser should now take you to a local instance of the Herald site. The site will most likely be blank.  Make sure your browser resolves the `http://`.
+Typing [http://badgerherald.localhost](http://badgerherald.localhost) into a browser should now take you to a local instance of the Herald site. The site will most likely be blank.  Make sure your browser resolves the `http://`.
 
 #### 4. Using Sass: a CSS Preprocessor
 

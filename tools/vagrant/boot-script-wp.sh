@@ -1,4 +1,4 @@
-# boot-script-bhrld-wp.sh
+# boot-script-wp.sh
 # 
 # Just to install wordpress
 #

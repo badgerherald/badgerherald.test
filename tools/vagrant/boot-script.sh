@@ -13,7 +13,7 @@ USERNAME=root
 
 VAGRANT_DB_USER=root
 VAGRANT_DB_PASS=root
-VAGRANT_DB_NAME=hrld
+VAGRANT_DB_NAME=badgerherald
 red='\033[0;31m'
 NC='\033[0m' # No Color
 # Some useful bash functions
@@ -170,7 +170,7 @@ echo '╔ All setup! ═══════════════════�
 echo '║                                                  ║'
 echo '║ Add the following line to your /etc/hosts file:  ║'
 echo '║                                                  ║'
-echo '║     192.168.19.69 badgerherald.test         ║'
+echo '║     192.168.19.69 badgerherald.test              ║'
 echo '║                                                  ║'
 echo '║ - Gentle Bot                                     ║'                                 
 echo '║                                                  ║'

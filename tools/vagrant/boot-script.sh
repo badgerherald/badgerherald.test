@@ -134,10 +134,10 @@ mysql -u $VAGRANT_DB_USER -p$VAGRANT_DB_PASS -e "grant all privileges on *.* to 
  mysql -u $VAGRANT_DB_USER -p$VAGRANT_DB_PASS -e "CREATE DATABASE IF NOT EXISTS hrld; "
 
 # Import hrld_wp_dev.sql to database hrld
- if [ -f "/var/www/badgerherald.localhost.sql" ];
+ if [ -f "/var/www/badgerherald.test.sql" ];
     then
         echo "importing data to hrld" 
-        mysql -u $VAGRANT_DB_USER -p$VAGRANT_DB_PASS $VAGRANT_DB_NAME < "/var/www/badgerherald.localhost.sql"
+        mysql -u $VAGRANT_DB_USER -p$VAGRANT_DB_PASS $VAGRANT_DB_NAME < "/var/www/badgerherald.test.sql"
     else
         echo -e "${red}"
         echo ''

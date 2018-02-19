@@ -14,13 +14,13 @@ This repo gets you a vagrant box preloaded with configured server settings and a
 
 First, run this command from terminal to clone the repo.
 
-    git clone https://github.com/badgerherald/badgerherald.localhost.git
+    git clone https://github.com/badgerherald/badgerherald.test.git
 
 #### 2. Vagrant up
 
 You'll need copies of both [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html).
 
-If you have a copy of `badgerherald.localhost.sql`, move this into the repo directory and it will be loaded. Otherwise, a new database will be created.
+If you have a copy of `badgerherald.test.sql`, move this into the repo directory and it will be loaded. Otherwise, a new database will be created.
 
 From the root of the repo, run:
 
@@ -28,13 +28,13 @@ From the root of the repo, run:
 
 This will prevision a new virtual machine on your computer with the same LAMP stack as the Herald. This process can take anywhere between 5 and 15 minutes, depending on your machine. Once the script is finished running, you'll have a vagrant box running at the ip address `192.168.19.69`. 
 
-Now, we have to map the hostname "badgerherald.localhost" to the IP address of the vagrant machine. To do so open Terminal and type:
+Now, we have to map the hostname "badgerherald.test" to the IP address of the vagrant machine. To do so open Terminal and type:
 
-`sudo nano /etc/hosts`
+`sudo nano /etc/hosts` (on Windows this is located at `C:\Windows\System32\Drivers\etc\hosts.`)
 
 Enter your password as prompted. Insert the following in a new line:
 
-`192.168.19.69	badgerherald.localhost` 
+`192.168.19.69	badgerherald.test` 
 
 Use `control+o` to save the file and `control+c` to quit. 
 
@@ -73,7 +73,7 @@ Next, init the nested submodules of this repo
     $ cd plugins
     $ git submodule update --init --recursive 
     
-Typing [http://badgerherald.localhost](http://badgerherald.localhost) into a browser should now take you to a local instance of the Herald site. The site will most likely be blank.  Make sure your browser resolves the `http://`.
+Typing [http://badgerherald.test](http://badgerherald.test) into a browser should now take you to a local instance of the Herald site. The site will most likely be blank.  Make sure your browser resolves the `http://`.
 
 #### 4. Using Sass: a CSS Preprocessor
 
@@ -82,6 +82,8 @@ The Herald website requires extensive CSS formatting. We use Sass to help make t
 ###### Install Sass
 
 Visit [`http://sass-lang.com/install`](http://sass-lang.com/install) and follow the instructions. A command-line install is sufficient for our purposes, but feel free to play around with the related applications.
+
+You'll need to have ruby installed to use gem, which the above instructions will walk you through
 
 ###### Have Sass watch for changes
 
@@ -116,7 +118,6 @@ The newest version of WordPress is downloaded and installed as part of the vagra
 
 Along with the Vagrantfile, this repo comes set up with the full Herald software stack, minus the physical install of WordPress.
 
-
 #### Utilities
 
 To work on the machine, `cd` into the repo and `ssh` in:
@@ -138,3 +139,21 @@ To completely remove the virtual machine in it's entirety, run:
     vagrant destroy
 
 Note: This will destroy the entire machine, including any databases and additional server maintanence you might have done.
+
+## FAQs
+
+###### I don't like badgerherald.test, how do I change the local URL?
+
+If for some reason you'd like to change the URL of the test website, there are a few places you'll need to edit.
+
+First, in `./wp/wp-config.php`, where you'll need to update the `WP_HOME` and `WP_SITEURL` constants with the new URL
+
+Then, you'll need to ssh into vagrant (run `vagrant ssh`) and edit the virtual host configuration with:
+    
+    sudo nano /etc/apache2/sites-enabled/vagrant
+
+After you do this, you'll need to restart apache2 with `sudo service apache2 restart`. Log out of ssh with `logout`
+
+And finally, update your `/etc/host` (Windows: `C:\Windows\System32\Drivers\etc\hosts`)
+
+

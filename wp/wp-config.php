@@ -38,8 +38,8 @@ define('DB_COLLATE', '');
 define('HRLD_DEV', true);
 define('EXA_DEV', true);
 define('HRLD_PRODUCTION', false);
-define('WP_HOME','http://badgerherald.localhost/');
-define('WP_SITEURL','http://badgerherald.localhost/wp/');
+define('WP_HOME','http://badgerherald.test/');
+define('WP_SITEURL','http://badgerherald.test/wp/');
 
 
 /**#@+

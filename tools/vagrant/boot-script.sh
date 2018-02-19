@@ -170,7 +170,7 @@ echo '╔ All setup! ═══════════════════�
 echo '║                                                  ║'
 echo '║ Add the following line to your /etc/hosts file:  ║'
 echo '║                                                  ║'
-echo '║     192.168.19.69 badgerherald.localhost         ║'
+echo '║     192.168.19.69 badgerherald.test         ║'
 echo '║                                                  ║'
 echo '║ - Gentle Bot                                     ║'                                 
 echo '║                                                  ║'

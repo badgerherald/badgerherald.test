@@ -34,7 +34,7 @@ define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
 
-/** badgerherald.localhost use constants */
+/** badgerherald.test use constants */
 define('HRLD_DEV', true);
 define('EXA_DEV', true);
 define('HRLD_PRODUCTION', false);

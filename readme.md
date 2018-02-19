@@ -1,4 +1,4 @@
-# badgerherald.localhost
+# badgerherald.test
 
 Run a local instnace of The Badger Herald's website.
 

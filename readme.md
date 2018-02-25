@@ -24,7 +24,9 @@ This is the software that lets us run a server without messing with a bunch of s
 
 #### 2. Cloning
 
-Then, run this command from terminal to clone the repo. Save it to a folder like `~/Documents/`, `C:/badgerherald/` or pick your own favorite place
+If you don't have Git installed, first install it. You can find the downloads for it [here](https://git-scm.com/downloads).
+
+Then, run this command from terminal to clone the repo. Save it to a folder like `~/Documents/`, `C:/badgerherald/` or pick your own favorite place.
 
     git clone https://github.com/badgerherald/badgerherald.test.git
 

@@ -131,7 +131,7 @@ mysql -u $VAGRANT_DB_USER -p$VAGRANT_DB_PASS -e "grant all privileges on *.* to 
 
 # Create a database for wordpress
  echo "create database hrld" 
- mysql -u $VAGRANT_DB_USER -p$VAGRANT_DB_PASS -e "CREATE DATABASE IF NOT EXISTS hrld; "
+ mysql -u $VAGRANT_DB_USER -p$VAGRANT_DB_PASS -e "CREATE DATABASE IF NOT EXISTS $VAGRANT_DB_NAME; "
 
 # Import hrld_wp_dev.sql to database hrld
  if [ -f "/var/www/badgerherald.test.sql" ];

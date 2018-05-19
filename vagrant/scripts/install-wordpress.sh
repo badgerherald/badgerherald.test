@@ -1,50 +1,24 @@
-# boot-script-wp.sh
-# 
-# Just to install wordpress
+# install-wordpress.sh
+#
+# Installs Wordpress
 #
 # @author Jason chan
-# @see 
 
 #!/bin/bash
 
-echo ""
-echo ""
-echo ""
-echo ""
-echo "============================================"
-echo "WordPress Install Script"
-echo "============================================"
+echo "WordPress Install Script ============================"
 
 #change dir to www
-cd /var/www/
+cd /var/www/badgerherald.test/
 
 #download wordpress
 curl -O https://wordpress.org/latest.tar.gz
 
 #unzip wordpress
-tar -zxvf latest.tar.gz
-
-# change dir to wordpress
-cd wordpress
-
-#copy paste unzipped files to actual wp folder
-cp -r -f . ../wordpress
-
-#change dir to www
-cd ../
-
-#remove wp-temp
-rm -R wordpress
+tar -zxvf latest.tar.gz wordpress
 
 #remove zip file
 rm latest.tar.gz
 
-
-echo ''
-echo '╔ Wordpress downloaded! ═══════════════════════════╗'
-echo '║                                                  ║'             
-echo '║       happy developing!                          ║'                       
-echo '║                                                  ║'
-echo '╚══════════════════════════════════════════════════╝'
-echo ''
+echo "WordPress Downloaded ================================"
 

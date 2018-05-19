@@ -126,19 +126,19 @@ a2enmod rewrite
 mysql -u $VAGRANT_DB_USER -p$VAGRANT_DB_PASS -e "grant all privileges on *.* to '$VAGRANT_DB_USER'@'%' identified by '$VAGRANT_DB_PASS' with grant option";
 
 # Create a database for wordpress
- echo "create database hrld" 
- mysql -u $VAGRANT_DB_USER -p$VAGRANT_DB_PASS -e "CREATE DATABASE IF NOT EXISTS hrld; "
+ echo "create database badgerherald" 
+ mysql -u $VAGRANT_DB_USER -p$VAGRANT_DB_PASS -e "CREATE DATABASE IF NOT EXISTS badgerherald; "
 
-# Import hrld_wp_dev.sql to database hrld
+# Import hrld_wp_dev.sql to database badgerherald
  if [ -f "/var/www/badgerherald.test.sql" ];
     then
-        echo "importing data to hrld" 
+        echo "importing data to badgerherald" 
         mysql -u $VAGRANT_DB_USER -p$VAGRANT_DB_PASS $VAGRANT_DB_NAME < "/var/www/badgerherald.test.sql"
     else
         echo -e "${red}"
         echo ''
         echo ''
-        echo "cannot import data to hrld --- file not found."
+        echo "cannot import data to badgerherald --- file not found."
         echo "make sure to import file manually through phpmyadmin or ssh"
         echo ''
         echo ''

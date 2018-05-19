@@ -28,7 +28,7 @@ tar -zxvf latest.tar.gz
 cd wordpress
 
 #copy paste unzipped files to actual wp folder
-cp -r -f . ../wp
+cp -r -f . ../wordpress
 
 #change dir to www
 cd ../

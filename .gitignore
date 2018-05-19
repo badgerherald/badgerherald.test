@@ -29,7 +29,7 @@ app.badgerherald.test/*
 
 # Wordpress
 badgerherald.test/wordpress/*
-!wordpress/wp-config.php
+!badgerherald.test/wordpress/wp-config.php
 
 # other
 

@@ -84,7 +84,7 @@ ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib/
 echo "Setting up user environment..."
 
 # Pull down assets
-ASSET_DIR="/var/www/tools/vagrant/assets"
+ASSET_DIR="/var/www/vagrant"
 
 cd /home/$USERNAME
 
@@ -95,10 +95,6 @@ chmod -Rf 755 $ASSET_DIR
 # Install assets
 echo "Applying overlay from tools/vagrant/assets/overlay"
 rsync -r $ASSET_DIR/overlay/ /
-
-# install scripts
-echo "Installing scripts from tools/vagrant/assets/bin"
-cp $ASSET_DIR/bin/* /usr/local/bin
 
 # Copy ssh config
 # echo "Installing keys and ssh config from tools/vagrant/assets/ssh"
@@ -143,13 +139,11 @@ mysql -u $VAGRANT_DB_USER -p$VAGRANT_DB_PASS -e "grant all privileges on *.* to 
         echo ''
         echo ''
         echo "cannot import data to hrld --- file not found."
-        echo "make sure to import file manually throuhg phpmyadmin or ssh"
+        echo "make sure to import file manually through phpmyadmin or ssh"
         echo ''
         echo ''
         echo -e "${NC}"
-
 fi
-
 
 # Install WP CLI
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
@@ -166,14 +160,10 @@ service apache2 restart
 service mysql restart
 
 echo ''
-echo '╔ All setup! ══════════════════════════════════════╗'
-echo '║                                                  ║'
+echo '╔════════════════════ All set! ════════════════════╗'
 echo '║ Add the following line to your /etc/hosts file:  ║'
-echo '║                                                  ║'
 echo '║     192.168.19.69 badgerherald.test              ║'
-echo '║                                                  ║'
 echo '║ - Gentle Bot                                     ║'                                 
-echo '║                                                  ║'
 echo '╚══════════════════════════════════════════════════╝'
 echo ''
 

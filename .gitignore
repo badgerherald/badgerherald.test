@@ -3,6 +3,8 @@ install-site*
 .DS_Store
 *.sql
 
+index.html
+
 # emacs
 *~
 *~
@@ -22,8 +24,11 @@ Capfile
 extras/
 interactive/
 
+#
+app.badgerherald.test/*
+
 # Wordpress
-wp/*
+badgerherald.test/wordpress/*
 !wp/wp-config.php
 
 # other

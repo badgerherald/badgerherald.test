@@ -2,16 +2,10 @@
   ServerName badgerherald.test
   ServerAlias *.badgerherald.test
 
-  DocumentRoot /var/www
+  DocumentRoot /var/www/badgerherald.test
   <Directory />
-    Options FollowSymLinks
+    Options Indexes FollowSymLinks Multiviews
     AllowOverride all
-  </Directory>
-  <Directory /vagrant>
-    Options Indexes FollowSymLinks MultiViews
-    AllowOverride all
-    Order allow,deny
-    allow from all
   </Directory>
 
   # Possible values include: debug, info, notice, warn, error, crit,

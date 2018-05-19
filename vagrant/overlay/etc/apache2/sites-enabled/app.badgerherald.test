@@ -1,0 +1,14 @@
+<VirtualHost *:80>
+  ServerName app.badgerherald.test
+
+  DocumentRoot /var/www/app.badgerherald.test/www
+  <Directory />
+    Options Indexes FollowSymLinks Multiviews
+    AllowOverride all
+  </Directory>
+
+  # Possible values include: debug, info, notice, warn, error, crit,
+  # alert, emerg.
+  LogLevel warn
+
+</VirtualHost>

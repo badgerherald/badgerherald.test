@@ -43,7 +43,7 @@ define('HRLD_PRODUCTION', false);
 define('WP_HOME','http://badgerherald.test/');
 define('WP_SITEURL','http://badgerherald.test/wordpress/');
 define('EXA_REST_URL', 'http://badgerherald.test/wp-json');
-define('EXA_APP_URL', 'http://badgerherald.test/app/build/');
+define('EXA_APP_URL', 'http://badgerherald.test/app');
 
 
 

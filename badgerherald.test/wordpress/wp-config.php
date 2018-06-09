@@ -37,10 +37,14 @@ define('DB_COLLATE', '');
 /** badgerherald.test use constants */
 define('HRLD_DEV', true);
 define('EXA_DEV', true);
-define('EXA_REST_URL', 'http://badgerherald.test/wp-json');
 define('HRLD_PRODUCTION', false);
+
+/* url definitions */
 define('WP_HOME','http://badgerherald.test/');
 define('WP_SITEURL','http://badgerherald.test/wordpress/');
+define('EXA_REST_URL', 'http://badgerherald.test/wp-json');
+define('EXA_APP_URL', 'http://badgerherald.test/app/build/');
+
 
 
 /**#@+

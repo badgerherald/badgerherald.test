@@ -8,6 +8,8 @@
     AllowOverride all
   </Directory>
 
+  Alias /app/ /var/www/app.badgerherald.test/www/
+  
   # Possible values include: debug, info, notice, warn, error, crit,
   # alert, emerg.
   LogLevel warn

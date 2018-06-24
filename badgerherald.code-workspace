@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "./",
+		},
+		{
+			"path": "./badgerherald.test/wordpress/wp-content/themes/exa"
+		},
+		{
+			"path": "./badgerherald.test/wordpress/wp-content/themes/hexa"
+		},
+	],
+	"settings": {}
+}

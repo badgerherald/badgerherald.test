@@ -38,3 +38,4 @@ style.css
 cache
 *.sublime-workspace
 node_modules
+badgerherald.test/wpcs/

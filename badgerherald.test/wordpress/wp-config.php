@@ -15,39 +15,37 @@
  */
 
 // ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
+/* The name of the database for WordPress */
 define('DB_NAME', 'badgerherald');
 
-/** MySQL database username */
+/* MySQL database username */
 define('DB_USER', 'root');
 
-/** MySQL database password */
+/* MySQL database password */
 define('DB_PASSWORD', 'root');
 
-/** MySQL hostname */
+/* MySQL hostname */
 define('DB_HOST', 'localhost');
 
-/** Database Charset to use in creating database tables. */
+/* Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
-/** The Database Collate type. Don't change this if in doubt. */
+/* The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
-
-/** badgerherald.test use constants */
+/* badgerherald.test use constants */
 define('HRLD_DEV', true);
 define('EXA_DEV', true);
 define('HRLD_PRODUCTION', false);
 
 /* url definitions */
-define('WP_HOME','http://badgerherald.test/');
-define('WP_SITEURL','http://badgerherald.test/wordpress/');
+define('WP_HOME', 'http://badgerherald.test/');
+define('WP_SITEURL', 'http://badgerherald.test/wordpress/');
 define('EXA_REST_URL', 'http://badgerherald.test/wp-json');
 define('EXA_APP_URL', 'http://badgerherald.test/app');
 
 
-
-/**#@+
+/*#@+
  * Authentication Unique Keys and Salts.
  *
  * Change these to different unique phrases!
@@ -65,7 +63,7 @@ define('SECURE_AUTH_SALT', 'P,32Uj? (LAu:tcY#Bq:kQgXcZ[:4N<lPM,MQO+X?$afLOw5KEZi
 define('LOGGED_IN_SALT',   'D9[ALHEcb`?g:2q,agTB)>3S`+[n9f4f;JtsAp0xyml8G8LM6}ByK/h2ExypFRhu');
 define('NONCE_SALT',       'J_bqEOfxafaNpTD:&AX3RQ0Gjd_?#~4j6?LL=Z O_5q|D|2[=e2>i!FSU%. :FWD');
 
-/**#@-*/
+/*#@-*/
 
 /**
  * WordPress Database Table prefix.
@@ -86,9 +84,9 @@ define('WP_DEBUG', true);
 
 /* That's all, stop editing! Happy blogging. */
 
-/** Absolute path to the WordPress directory. */
+/* Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+    define('ABSPATH', dirname(__FILE__) . '/');
 
-/** Sets up WordPress vars and included files. */
-require_once(ABSPATH . 'wp-settings.php');
+/* Sets up WordPress vars and included files. */
+require_once ABSPATH . 'wp-settings.php';

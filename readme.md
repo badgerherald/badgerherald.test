@@ -40,6 +40,8 @@ This will prevision a new virtual machine on your computer with the same LAMP st
 
 > Note: If you're running Windows and get this message: "You are trying to allocate >3GB of RAM to the VM. This requires: (a) a 64 bit host system; and (b) true hardware pass-through ie VT-x," follow the instructions [here](https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/) to enable virtualization in your BIOS
 
+> If you have an issue with guest additions, run `vagrant plugin install vagrant-vbguest`
+
 Now, we have to map the hostname "badgerherald.test" to the IP address of the vagrant machine. To do so open Terminal and type:
 
 `sudo nano /etc/hosts` (on Windows this is located at `C:\Windows\System32\Drivers\etc\hosts` and will need to be edited as admin).
@@ -50,7 +52,7 @@ Enter your password as prompted. Insert the following in a new line:
 
 Use `control+o` to save the file and `control+c` to quit. 
 
-For some reason, if `/etc/hosts` is not properly set up as an alias for `/private/etc/hosts`, change your `/private/etc/hosts` file directly instead. The `hosts` file is on your host computer, not the Virtual Machine. Also, make sure there aren't any file extension attached to the hosts file, especially if you edit it through program/applications other than vi, vim, nano etc. 
+> For some reason, if `/etc/hosts` is not properly set up as an alias for `/private/etc/hosts`, change your `/private/etc/hosts` file directly instead. The `hosts` file is on your host computer, not the Virtual Machine. Also, make sure there aren't any file extension attached to the hosts file, especially if you edit it through program/applications other than vi, vim, nano etc. 
 
 #### 4. Clone other repos
 
@@ -58,42 +60,24 @@ A few additional repos are needed for development.
 
 ###### First, cd to the WordPress theme directory.
 
-    $ cd ./wp/wp-content/themes/
+    $ cd ./badgerherald.test/wordpress/wp-content/themes/
 
 And clone the Herald's main theme [exa](http://github.com/badgerherald/exa) and the Herald's child theme [hexa](https:)
 
     $ git clone https://github.com/badgerherald/exa.git
     $ git clone https://github.com/badgerherald/hexa.git
 
-###### Now, we need to set up the core plugins.
+###### Installing App endpoint
 
-First we remove the default plugins from the plugin directory:
+_// todo_
 
-    $ cd ../plugins/
-    $ rm -rf * 
-
-_careful with the `rm` command; it will remove everything in the folder. Be sure you're in the plugin folder, or this won't just delete plugins but possibly the operating system._
-
-Then, we clone the plugin directory *directly* into the WordPress plugin directory. We do this by specifying `.` as the folder name to clone into. Still in the plugins folder.
-    
-    $ git clone https://github.com/badgerherald/hexa-plugins.git .
-
-Next, init the nested submodules of this repo
-
-    $ cd plugins
-    $ git submodule update --init --recursive 
-    
-Typing [http://badgerherald.test](http://badgerherald.test) into a browser should now take you to a local instance of the Herald site. If you're taken to Google, add `http://` to the front of the URL.
-
-#### 4. Using Sass: a CSS Preprocessor
+#### 5. Using Sass: a CSS Preprocessor
 
 We use Sass to help make the web design process easier and more efficient. It is required, or the website won't have a working stylesheet. Here's how to get it running:
 
 ###### Install Sass
 
 Visit [`http://sass-lang.com/install`](http://sass-lang.com/install) and follow the instructions. A command-line install is sufficient for our purposes, but feel free to play around with the related applications.
-
-You'll need to have ruby installed to use gem, which the above instructions will walk you through.
 
 ###### Have Sass watch for changes
 

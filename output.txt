@@ -1,0 +1,25 @@
+==> default: Running provisioner: shell...
+    default: Running: /var/folders/5g/_gz2wgw50cs1jt0dtkmqlgch0000gn/T/vagrant-shell20190525-31034-v3qzvi.sh
+    default: Setting locale ...
+    default: Generating locales (this might take a while)...
+    default:   en_US.UTF-8
+    default: ...
+    default:  done
+    default: Generation complete.
+    default: [1;24r(B)0[m[1;24r[7m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+    default: Package configuration┌──────────────────────────┤ Configuring locales ├──────────────────────────┐│ Locales are a framework to switch between multiple languages and allow    ││ users to use their language, country, characters, collation order, etc.   ││││ Please choose which locales to generate. UTF-8 locales should be chosen   ││ by default, particularly for new installations. Other character sets may  ││ be useful for backwards compatibility with older systems and software.    ││││ Locales to be generated:││││    [ ] All locales↑   ││    [ ] aa_DJ ISO-8859-1▮   ││    [ ] aa_DJ.UTF-8 UTF-8▒   ││    [ ] aa_ER UTF-8▒   ││    [ ] aa_ER@saaho UTF-8▒   ││    [ ] aa_ET UTF-8↓   ││││││<Ok><Cancel>│││└───────────────────────────────────────────────────────────────────────────┘
+    default: Failed to open terminal.debconf: whiptail output the above errors, giving up!
+    default: 
+    default: Current default time zone: 'Etc/GMT+0'
+    default: Local time is now:      Sat May 25 21:37:20 GMT 2019.
+    default: Universal Time is now:  Sat May 25 21:37:20 UTC 2019.
+    default: mkdir: 
+    default: cannot create directory ‘/home/root/logs’
+    default: : No such file or directory
+    default: 
+    default: ╔════════════════════ All set! ════════════════════╗
+    default: ║ Add the following line to your /etc/hosts file:  ║
+    default: ║     192.168.19.69 badgerherald.test              ║
+    default: ║ - Gentle Bot                                     ║
+    default: ╚══════════════════════════════════════════════════╝
+==> default: Running provisioner: puppet...

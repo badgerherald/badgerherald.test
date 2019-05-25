@@ -3,6 +3,8 @@ install-site*
 .DS_Store
 *.sql
 
+*.tar.gz
+
 index.html
 
 # emacs
@@ -30,6 +32,8 @@ app.badgerherald.test/*
 # Wordpress
 badgerherald.test/wordpress/*
 !badgerherald.test/wordpress/wp-config.php
+
+badgerherald.test/wordpress-old/*
 
 # other
 

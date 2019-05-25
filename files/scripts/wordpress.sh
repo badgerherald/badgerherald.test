@@ -21,4 +21,3 @@ tar -zxvf latest.tar.gz wordpress
 rm latest.tar.gz
 
 echo "WordPress Downloaded ================================"
-

@@ -15,6 +15,7 @@ class { 'php7::install': }
 class { 'mysql::install': }
 class { 'wordpress::install': }
 class { 'phpmyadmin::install': }
+class { 'exa::install': }
 #class { 'composer::install': }
 #class { 'phpqa::install': }
 #class { 'tests::install': }

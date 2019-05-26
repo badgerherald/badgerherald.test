@@ -32,8 +32,8 @@ class apache2::install {
   }
   */
 
-  file { '/etc/apache2/sites-available/badgerherald.test':
-    source  => '/vagrant/files/etc/apache2/sites-available/badgerherald.test',
+  file { '/etc/apache2/sites-available/badgerherald.test.conf':
+    source  => '/vagrant/files/etc/apache2/sites-available/badgerherald.test.conf',
   }
 
   file { '/etc/apache2/mods-available/rewrite.load':
@@ -48,9 +48,9 @@ class apache2::install {
     source  => '/vagrant/files/etc/apache2/mods-available/dir.conf',
   }
 
-  file { '/etc/apache2/sites-enabled/badgerherald.test':
+  file { '/etc/apache2/sites-enabled/badgerherald.test.conf':
     ensure  => link,
-    target  => '/etc/apache2/sites-available/badgerherald.test',
+    target  => '/etc/apache2/sites-available/badgerherald.test.conf',
   }
 
   file { '/etc/apache2/mods-enabled/rewrite.load':

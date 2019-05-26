@@ -5,19 +5,33 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "debian/contrib-stretch64"
 
-  # Provisioning script
-  
+  ## Forward ssh config
+  config.ssh.forward_agent = true
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo apt-get update
+    sudo apt-get install -y git
+    mkdir -p ~/.ssh
+    chmod 700 ~/.ssh
+    ssh-keyscan -H github.com >> ~/.ssh/known_hosts    
+  SHELL
+
+  ## Install Puppet
   config.vm.provision :shell, path: "files/scripts/provision.sh"
 
   # Hostname
   config.vm.network :private_network, :ip => "192.168.19.69"
+
+  #
+  config.vm.synced_folder "badgerherald.test/", "/var/www/badgerherald.test/", nfs: true
+  config.vm.synced_folder "app.badgerherald.test/", "/var/www/app.badgerherald.test/", nfs: true
+  config.vm.synced_folder '.', '/vagrant', nfs: true
 
   # Puppet LAMP setup
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "puppet/manifests"
     puppet.module_path = "puppet/modules"
     puppet.manifest_file  = "init.pp"
-    puppet.options="--verbose --debug"
+    # puppet.options="--verbose --debug"
     puppet.synced_folder_args
   end
   

@@ -20,10 +20,9 @@ Vagrant.configure("2") do |config|
 
   # Hostname
   config.vm.network :private_network, :ip => "192.168.19.69"
-
+  config.vm.network "private_network", type: "dhcp"
+  
   #
-  config.vm.synced_folder "badgerherald.test/", "/var/www/badgerherald.test/", nfs: true
-  config.vm.synced_folder "app.badgerherald.test/", "/var/www/app.badgerherald.test/", nfs: true
   config.vm.synced_folder '.', '/vagrant', nfs: true
 
   # Puppet LAMP setup

@@ -24,6 +24,6 @@ class mysql::install {
     refreshonly => true,
     unless      => "mysqladmin -uroot -p${password} status",
     command     => "mysqladmin -uroot password ${password}",
-}
+  }
 
 }
